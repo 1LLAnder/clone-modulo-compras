@@ -1,7 +1,0 @@
-build/
-dist/
-nbproject/
-*.log
-*.class
-.git
-.gitignore
