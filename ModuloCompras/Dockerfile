@@ -1,14 +1,8 @@
-# Usar una imagen base de Java
-FROM openjdk:11-jre-slim
+# Usar una imagen base de Tomcat
+FROM tomcat:9.0
 
-# Establecer el directorio de trabajo
-WORKDIR /app
+# Copiar el archivo WAR al contenedor
+COPY dist/ModuloCompras.war /usr/local/tomcat/webapps/
 
-# Copiar el archivo WAR al contenedor desde la carpeta dist
-COPY dist/ModuloCompras.war /app/ModuloCompras.war
-
-# Exponer el puerto en el que se ejecutará la aplicación
+# Exponer el puerto en el que se ejecutará Tomcat
 EXPOSE 8080
-
-# Comando para ejecutar la aplicación
-CMD ["java", "-jar", "ModuloCompras.war"]
